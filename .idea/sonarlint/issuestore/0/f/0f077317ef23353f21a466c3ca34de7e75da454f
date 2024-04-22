@@ -1,0 +1,9 @@
+
+Ў	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(µЋ№Юьяяяя8н¦ТХп1J$b71fb210-8264-4219-80a3-534285656750
+r	java:S106"+Replace this use of System.out by a logger.(л¦Лўщяяяя8ћ§ТХп1J$dc52c067-30b6-40a4-be7b-0d331d676ddf
+•
+java:S3776"RRefactor this method to reduce its Cognitive Complexity from 16 to the 15 allowed.(ђЫЮ№8џ§ТХп1J$814b3445-eda5-4f39-8f1a-34a8c5ba676b
+j
+java:S1659""Declare "next" on a separate line.(Лўгиыяяяя8 §ТХп1J$aef7676f-dfdb-49a7-a801-4909810877a2
+r	java:S106+"+Replace this use of System.out by a logger.(ЛдЈёяяяяя8ььУХп1J$9e63e43f-2a76-4704-9d60-ab79e8e51ba3
+~	java:S125,"<This block of commented-out lines of code should be removed.(ўА¦э8¤§ТХп1J$9ab9c835-5c7e-4158-a24a-c3da9234905e
