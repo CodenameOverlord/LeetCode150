@@ -1,0 +1,5 @@
+
+	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(µίκωÿÿÿÿJ$68e47931-ca77-4a72-a325-88de07062afa
+r	java:S106"+Replace this use of System.out by a logger.(Ρ›ϋωÿÿÿÿ8©γΞπ1J$fa488bfb-68c7-4f50-bfd6-5d4b5abcbaf6
+
+java:S1155 ">Use isEmpty() to check whether the collection is empty or not.(ήγ»†8μν™Ξπ1J$e3632a39-6a25-4912-bf53-bb50d1f61ca9

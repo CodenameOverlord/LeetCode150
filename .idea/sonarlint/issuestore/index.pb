@@ -25,3 +25,5 @@ X
 -src/removeDuplicatesFromSortedArray/Main.java,0\f\0f077317ef23353f21a466c3ca34de7e75da454f
 M
 src/PascalsTriangle/Main.java,6\2\62c133159b7dd8b506b4b90bc31b0e3817febb72
+V
+&src/FirstUniqueCharInAString/Main.java,c\8\c860ad0800265dc3562a9f7a0e1108c8448bd984
