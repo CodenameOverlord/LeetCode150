@@ -33,3 +33,9 @@ L
 src/ClimbingStairs/main.java,e\1\e195cce5982ce6323e246eb4ec0b91212fb0ab52
 L
 src/ClimbingStairs/Main.java,7\8\78814d7dc76cc308ac49e0e3e77fd00dd4d77fbb
+V
+&src/FindAllAnagramsInAString/main.java,f\2\f226c40d28ff1c3d190639a6c221f9aab30104a4
+V
+&src/FindAllAnagramsInAString/Main.java,c\4\c4c053d38824d3584cd32c07c12069139dc1dacc
+l
+<src/FindAllAnagramsInAString/OptimizedSolutionRemaining.java,c\6\c6c8e714e4ec680275bbc9ab2b914c6e9add2a5d

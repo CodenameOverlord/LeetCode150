@@ -1,0 +1,9 @@
+
+p
+java:S5411)"(Use a primitive boolean expression here.(”ùîßúÿÿÿÿ8Îòƒ¡ñ1J$5790097b-c1c8-471e-b5a8-22a56693762f
+p
+java:S54110"(Use a primitive boolean expression here.(”ùîßúÿÿÿÿ8Ïòƒ¡ñ1J$855c80d3-31be-4696-b00a-94f1b24dd812
+œ	java:S120"ZRename this package name to match the regular expression '^[a-z_]+(\.[a-z_][a-z0-9_]*)*$'.(«Œü‚8Ñòƒ¡ñ1J$46095b3e-ef7a-4294-a333-0aeea3d2acde
+r	java:S106"+Replace this use of System.out by a logger.(¨ÊÇ÷þÿÿÿÿ8«óƒ¡ñ1J$3ee5b6b6-b59c-4c56-aa1f-c8806fc6269a
+|
+java:S2864D"4Iterate over the "entrySet" instead of the "keySet".(Ó®­Õþÿÿÿÿ8³óƒ¡ñ1J$62e8bf66-9677-4573-8ddb-77f27f1be8e8
