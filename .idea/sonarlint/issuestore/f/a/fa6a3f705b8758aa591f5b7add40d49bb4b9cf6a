@@ -1,0 +1,8 @@
+
+~
+java:S1854";Remove this useless assignment to local variable "hashMap".(éãÙ8ÌËáöğ1J$e20078f3-1035-4a49-879a-2f77ab207af3
+o
+java:S1481",Remove this unused "hashMap" local variable.(éãÙ8ÏËáöğ1J$31c71d67-4420-4655-ac99-0ee979f0393c
+l	java:S106"+Replace this use of System.out by a logger.(ç˜÷8ÑËáöğ1J$0ac13348-4435-4893-954c-4df13d33c596
+r	java:S106("+Replace this use of System.out by a logger.(ÈÀ£Äúÿÿÿÿ8ÒËáöğ1J$497bdee1-d569-4212-8c96-dccf2d37f3b3
+}	java:S125,"<This block of commented-out lines of code should be removed.(Å çQ8ÓËáöğ1J$5ceede7d-1d01-4ea7-be94-a17964e43ae5
