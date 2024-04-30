@@ -38,12 +38,6 @@ public class Main {
                 dfs(arr, i-1, j);
                 dfs(arr, i, j+1);
                 dfs(arr, i, j-1);
-
-
-
             }
-
-
-
     }
 }
