@@ -5,7 +5,7 @@ import java.util.Set;
 
 public class OptimizedSoln {
     public static void main(String[] args) {
-
+        // TODO document why this method is empty
     }
 
     public static class ListNode {
