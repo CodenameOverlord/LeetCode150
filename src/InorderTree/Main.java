@@ -29,11 +29,7 @@ public class Main {
     }
 
     public void inorder(List<Integer> result, TreeNode root){
-        if(root == null){
-            // result.add(null);
-            return;
-        }
-        else{
+        if(root != null){
             inorder(result, root.left);
             result.add(root.val);
             inorder(result, root.right);
