@@ -47,3 +47,5 @@ P
  src/SymmetricTree/Recursive.java,1\7\1719a285f83e5beb376cb4f337804882ba19c244
 F
 WrongPattern/Main.java,b\6\b694d9312a02ea802ecd96c33e935dcd35e95047
+H
+src/IsSameTree/Main.java,d\8\d8291454094a3a21823f067ea3a128a012104960
