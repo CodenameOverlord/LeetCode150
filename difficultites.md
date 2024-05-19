@@ -42,4 +42,10 @@
     if height[end]>start, increment start
     Do this till start = end
 
+### Calculating the number of trailing zeroes in a factorial
+    This will be determined by the number of factors of 5 present
+    
+#### Solution
+    n/5+n/5^2+n/5^3+n/5^4+....
+
 	
