@@ -109,4 +109,22 @@
 
     }
 
-	
+### Minimum-size-subarray-sum
+
+#### context: 
+    we are to give min subarray size where sum = target
+
+#### Solution:
+    Taking 2 pointer approach in this, we are using a startIndex and 
+    endIndex, startIndex will point the initial starting point of our 
+    subarray and the endIndex will be pointing to the end of subArray being considered
+    Both start and endIndex will be initiated from zero
+    Now, once we decide upon the startIndex, we are going to increment endIndex and keep 
+    on adding arr[endIndex] to the tempVariable until currentAns>=target and update minLen of subArray
+
+    Once currentAns>=temp, we will continue to increment the startIndex and decrement 
+    currentAns = currentAns - arr[startIndex] till
+    we find the pointer where either startIndex > endIndex 
+    or currentAns< target and update min length of subarray accordingly.
+    
+    we wil do this till we find the min length of subArray
