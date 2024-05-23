@@ -128,3 +128,67 @@
     or currentAns< target and update min length of subarray accordingly.
     
     we wil do this till we find the min length of subArray
+
+### Copy list with random pointer
+
+
+#### structure of Node
+
+    class Node {
+    int val;
+    Node next;
+    Node random;
+    
+        public Node(int val) {
+            this.val = val;
+            this.next = null;
+            this.random = null;
+        }
+    }
+
+
+#### Solution:
+    The idea is to create a duplicate identical node with the past node's data
+    same as second node,
+
+    Old List: A --> B --> C --> D 
+    InterWeaved List: A --> A' --> B --> B' --> C --> C' --> D --> D'
+
+#### step 1: insert new Nodes in between
+
+        Node temp = head;
+        while(temp!=null){
+            Node newNode = new Node (temp.val);
+            newNode.next = temp.next;
+            temp.next = newNode;
+            temp = temp.next.next;
+        }
+        temp = head;
+#### step 2:  Now, for random pointer, we are going to point to the next pointer to 
+    the original one
+    
+     while(temp!=null){
+            if(temp.random == null){
+                temp.next.random = null;
+            }
+            else{
+                temp.next.random = temp.random.next;
+            }
+            temp = temp.next.next;
+    }
+
+#### step 3: rearrange old and new nodes
+        temp = head;
+        Node newHead = temp.next;
+        while(temp!=null){
+            Node newNext = temp.next;
+            temp.next = temp.next.next;
+            if(newNext.next!=null)
+                newNext.next = newNext.next.next;
+            temp = temp.next;
+        }
+
+#### step 4: return newHead
+        return newHead;
+
+    
