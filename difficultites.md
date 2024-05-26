@@ -201,3 +201,14 @@
     reach to final element from that element, we are to skip that index,
     therefore: toReach +=1, else toReach = toReach.
     Initialize toReach with 1
+
+### POW(x,n)
+    the idea is that we use recursion, 
+    if(n%2==0){
+        ans = pow(x,n/2)
+            return ans*ans;
+    }
+    else{
+        //depending on n's value as positive or negetive, 
+        we provide the solution
+    }
