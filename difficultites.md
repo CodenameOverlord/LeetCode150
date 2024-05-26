@@ -191,4 +191,13 @@
 #### step 4: return newHead
         return newHead;
 
-    
+### JumpGame1
+    can we reach to destination (last array index) if we are 
+    starting from the first index where each element of the array
+    determines the max jump towards the endIndex that we can make
+
+#### Solution
+    start from the second last index from the array, if we can't 
+    reach to final element from that element, we are to skip that index,
+    therefore: toReach +=1, else toReach = toReach.
+    Initialize toReach with 1
