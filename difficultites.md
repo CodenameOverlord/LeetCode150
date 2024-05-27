@@ -212,3 +212,13 @@
         //depending on n's value as positive or negetive, 
         //we provide the solution
     }
+
+### Insert Intervals
+    we are to insert interval i into an arranged intervals list
+    and merge the same
+
+#### Solution
+    The naive approach:
+        is to add the solution into the mergedSolution
+        list by first inserting the interval at approapriate position in the 
+        sorted array followed by which merging the new array so formed
