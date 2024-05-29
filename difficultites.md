@@ -242,7 +242,7 @@
             2 6 10 14
             3 7 11 15
             4 8 12 16
-    2. reverse the columns
+        2. reverse the columns
             13 9 5 1 
             14 10 6 2
             15 11 7 3
