@@ -222,3 +222,14 @@
         is to add the solution into the mergedSolution
         list by first inserting the interval at approapriate position in the 
         sorted array followed by which merging the new array so formed
+
+
+### RotateImage
+    Given a 2D array, we are to rotate the array 90 degrees and 
+    give the outcome of the result, the operation should be done
+    inplace
+
+#### Solution
+    The idea is to 
+        1. transpose of the given array   
+        2. reverse the columns
