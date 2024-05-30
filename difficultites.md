@@ -212,3 +212,38 @@
         //depending on n's value as positive or negetive, 
         //we provide the solution
     }
+
+### Insert Intervals
+    we are to insert interval i into an arranged intervals list
+    and merge the same
+
+#### Solution
+    The naive approach:
+        is to add the solution into the mergedSolution
+        list by first inserting the interval at approapriate position in the 
+        sorted array followed by which merging the new array so formed
+
+
+### RotateImage
+    Given a 2D array, we are to rotate the array 90 degrees and 
+    give the outcome of the result, the operation should be done
+    inplace
+    
+    question:
+    1 2 3 4 
+    5 6 7 8
+    9 10 11 12
+    13 14 15 16
+
+#### Solution
+    The idea is to 
+        1. transpose of the given array   
+            1 5 9 13 
+            2 6 10 14
+            3 7 11 15
+            4 8 12 16
+        2. reverse the columns
+            13 9 5 1 
+            14 10 6 2
+            15 11 7 3
+            16 12 8 4 
