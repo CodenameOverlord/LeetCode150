@@ -247,3 +247,20 @@
             14 10 6 2
             15 11 7 3
             16 12 8 4 
+
+### Set matrix zeroes
+    Given a matrix of size M*N, we are to set row and col of a cell (i,j) 0 if
+    cell(i, j) =0
+
+
+#### Solution
+##### 1. Naive: 
+    using o(MN) space where we note M and N in pairs and then
+    iterating through the pairs, we can set individual rows and
+    cols  = 0
+##### 2. Better : 
+    using o(M+N) space where we store only the rows and the
+    cols of the matrix and then iterating through the rows,
+    we can set all elements of the rows = 0
+    Similarly, traversing through the cols, we can set all
+    elements of the particular cols = 0
