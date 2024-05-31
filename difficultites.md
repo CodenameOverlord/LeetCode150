@@ -264,3 +264,14 @@
     we can set all elements of the rows = 0
     Similarly, traversing through the cols, we can set all
     elements of the particular cols = 0
+##### 3. Constant Space:
+    if there is 0 val in 0th row or 0th col, mark zeroRow = true
+    and zeroCol = true
+    The idea is to neglecticng the zeroth row and zeroth col, 
+    for every cell in the matrix, put corresponding row and col = 0
+    ie, for (i,j), put i,0 and 0,j = 0, then excluding 0,0
+    iterate the 0th row and 0th col and every time you have encountered 
+    a 0 there, put the data inside the row and col = 0
+    Once done, check zeroCol and zeroRow
+    if zeroRow = true, mark the zeroth row = 0
+    if zeroCol = true, mark the zeroth col = 0
