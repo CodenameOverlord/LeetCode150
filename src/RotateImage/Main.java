@@ -28,6 +28,15 @@ public class Main {
     }
     static void rotate(int[][] matrix) {
         transposeMatrix(matrix);
+        System.out.println("");
+        System.out.println("");
+
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[0].length; j++) {
+                System.out.print(matrix[i][j]+" ");
+            }
+            System.out.println();
+        }
         reverseRows(matrix);
     }
 
