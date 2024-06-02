@@ -248,6 +248,8 @@
             15 11 7 3
             16 12 8 4 
 
+
+
 ### Set matrix zeroes
     Given a matrix of size M*N, we are to set row and col of a cell (i,j) 0 if
     cell(i, j) =0
@@ -275,3 +277,43 @@
     Once done, check zeroCol and zeroRow
     if zeroRow = true, mark the zeroth row = 0
     if zeroCol = true, mark the zeroth col = 0
+
+#### SubString with concatenation of all words
+    The idea is to enlist all the words freq in a Map
+    Now, iterate over the string to find the words using 
+    wordLength,
+    Now while iterating, if we are able to match the wordMap
+    formed earlier, we note the startIndex, else we proceed 
+    on from the next character with the same logic
+    
+##### Code:  
+        // iterator 
+        for(int i =0; i< stringLen- totalWords*wordLen+1; ++i){
+            Map<String, Integer> currentMap = new HashMap<>();
+            int j =0;
+    
+            // forming window
+    
+            while(j< totalWords){
+    
+                //creating word
+                String currentWord = s.substring(i+j*wordLen, i+(j+1)*wordLen);
+                
+                //validating whether word is present in the wordMap
+                if(!(wordMap.containsKey(currentWord))
+                        || wordMap.get(currentWord)<
+                        currentMap.getOrDefault(currentWord, 0)+1){
+                    break;
+                }
+                else{
+                    currentMap.put(currentWord, currentMap.getOrDefault(currentWord, 0)+1);
+                }
+                j++;
+            }
+    
+            //if all words are present, note the starting index
+            if(j==totalWords){
+                indexes.add(i);
+            }
+
+        }
