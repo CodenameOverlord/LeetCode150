@@ -327,7 +327,7 @@
 
 #### Solution
 
-##### naive:
+##### naive & Dynamic:
     Taking an extra array, minToReach, which gives the min jump
     required to reach end index, we assume that we have reached the
     end Index, now, from there we traverse back such that we are able to reach
@@ -352,3 +352,66 @@
         }
     }
     return minToReach[0];
+
+##### Greedy implicit bfs:
+    starting from the start flag, for any current Index
+    we will note the farthest that we can travel using the
+    value at the current index that we have
+    If the coverage, ie, (i+ nums[i]) exceeds our current window
+    we update the value of the coverage.
+    If the value at the current window is less than the 
+    max of coverage we don't need to update
+    
+    coverage = Math.max(coverage, i + nums[i]);
+
+    lastJumpIndex will store the max distance covered in the last Jump,
+    initialized to zero, we will update it to coverage when 
+    currentIndex or i == lastJumpIndex, and we will increment jumpsMade
+
+    when coverage exceeds destination, we return jumpsMade
+
+    Also, when we are updating the farthest distance, we increment jump
+    initailly, jump =0
+    we update jump when we cover the farthestWindow
+    int nums[]= new int {2, 4, 1, 2, 3, 1, 1, 2}
+     0, 1, 2, 3, 4, 5, 6, 7
+    {2, 4, 1, 2, 3, 1, 1, 2}
+
+    2-> we can cover 
+    [4, 1] // first jump window, farthest point = 2
+
+    4-> we can cover
+    [1, 2, 3, 1] // second jump window, farthest point = 5
+    
+    1-> we can cover
+    [2] // farthest point is farther than i = 3, no need to update
+
+    2-> we can cover
+    [3, 1] // farthest point is still = 4
+
+    3-> we can cover 
+    [1, 1, 2] // farthest point = 7, end of index we update farthest point and note the jump
+    
+##### Talk is cheap, here is the code
+    
+     public int jump(int[] nums) {
+        if(nums.length==1){
+            return 0;
+        }
+        int coverage = 0; 
+        int destination = nums.length-1;
+        int jumpsMade = 0;
+        int lastJumpIndex = 0;
+        for(int i = 0; i< nums.length; ++i){
+            coverage = Math.max(coverage, i+nums[i]);
+            if(coverage>=destination){
+                jumpsMade++;
+                break;
+            }
+            if(i==lastJumpIndex){
+                jumpsMade++;
+                lastJumpIndex = coverage;
+            }
+        }
+        return jumpsMade;
+    }
