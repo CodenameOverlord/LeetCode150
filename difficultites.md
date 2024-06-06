@@ -317,3 +317,38 @@
             }
 
         }
+
+### Jump Game 2
+    we are to return the min jumps required to reach the endIndex
+    where the value on the array determines the max index jump we can make
+    for instance:
+        arr[x]= 3, means we can jump max three indexes from the current index
+    Given that it is always possible to reach the endIndex
+
+#### Solution
+
+##### naive:
+    Taking an extra array, minToReach, which gives the min jump
+    required to reach end index, we assume that we have reached the
+    end Index, now, from there we traverse back such that we are able to reach
+    the end from current index in single jump, then minToReach[currentIndex] = 1
+    else
+    we minReach would be min of 1+minToReach[j]
+    where j ranges from i+1->i+jump
+##### code:
+    for(int i = n; i>=0; --i){
+        if(nums[i] >= n-i){
+            minToReach[i]=1;
+        }
+        else{
+            int jumpVal = nums[i];
+            int minVal = Integer.MAX_VALUE;
+            for(int j =i+1; j<=i+jumpVal;++j){
+                if(minToReach[j]!=Integer.MAX_VALUE)
+                minVal = Math.min(minVal, minToReach[j]+1);
+            }
+            // if(minVal != Integer.MAX_VALUE)
+            minToReach[i]= minVal;
+        }
+    }
+    return minToReach[0];
