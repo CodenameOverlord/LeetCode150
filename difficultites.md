@@ -415,3 +415,36 @@
         }
         return jumpsMade;
     }
+### Least Common Ancestor
+    We are to find the least common ancestor of 2 nodes in a tree
+
+#### Solution
+##### Naive
+    check whether the 2 nodes are present in the left subtree or the right subtree
+    if both are present on the left or right, move to the left or right subtree
+    respectively. If Node p is present in the left subtree and node q is present in
+    the right subtree then root is the Least common ancestor
+
+#### Optimised code
+    Since we are to return whichever node is the parent of the nodes we can use null
+    for this, so if lca(root.left, p, q)!=null  means either p or q is present in the
+    left subtree similarly, lca(root.right, p, q)!=null means either p or q is 
+    present in the right subtree. if both of them is not null means that current root
+    is the lca of both p and q
+
+#### Code 
+    TreeNode lca(TreeNode root, TreeNode p, TreeNode q){
+        if(root==null || root == p || root == q){
+            return root;
+        }
+        TreeNode left = lca(root.left, p, q);
+        TreeNode right = lca (root.right, p, q);
+        if(left!=null && right != null){
+            return root;
+        }
+        if(left==null){
+            return left;
+        }
+        else return right;
+    }
+    
