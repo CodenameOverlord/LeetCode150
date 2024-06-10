@@ -448,3 +448,13 @@
         else return right;
     }
     
+
+#### Binary Tree Right Side View
+##### Solution
+##### Naive
+    We can use level order traversal to find the level
+    of a tree and based on the same we can caluclate the 
+    right side of the tree view.
+##### Alternate
+
+
