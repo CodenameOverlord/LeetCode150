@@ -458,3 +458,35 @@
 ##### Alternate
 
 
+#### H-index
+    Given an array of citations of the research papers by students
+    we are to find the hIndex of the array,
+    Hindex-defination:  The h-index is defined as the maximum value of h 
+    such that the given researcher has published at least h papers that have each been cited at least h times.
+##### Solution
+###### Naive
+    We will sort the array 0,9, 2,3,4
+    0 2 3 4 9
+    so if n-i>=a[i] then we update the hIndex
+    Now, handle edge cases
+    0 0 0 0 11 12, here we have atleast 2 papers with more than 2 citations
+    if(citation[i]>n-i){
+        // we update the hIndex as 
+        hIndex = Math.max(hIndex, n-i);
+    }
+
+    Hence code:
+    Arrays.sort(citations);
+    int n = citations.length;
+    int h =0;
+    for(int i = 0; i< n;++i){
+        int curr = citations[i];
+        if(n-i>=curr){
+            h=curr;
+        }
+        if(curr>n-i){
+            h= Math.max(h, n-i);
+        }
+    }
+
+  
