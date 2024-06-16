@@ -489,4 +489,18 @@
         }
     }
 
-  
+#### Find Peak Element
+    We are to return the index of the element such that
+    a[i]>a[i-1] && a[i]>a[i+1]
+
+##### Solution
+    if((mid>0 && mid<n && nums[mid]> nums[mid-1] && nums[mid]>nums[mid+1] ) || 
+    (mid==0 && nums[mid]>nums[mid+1] || (mid==n && nums[mid]>nums[mid-1]) )){
+        {return mid;}
+        // if the mid is the peak element or the mid is the start of array and
+        the second element is less than zeroth index
+        or mid is the last element and the last second element is less than the mid
+        element return mid
+
+    }    if (arr[i]<arr[i+1]) { check on the right side of the array;}
+    else{ check the left side of the array}
