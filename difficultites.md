@@ -504,3 +504,12 @@
 
     }    if (arr[i]<arr[i+1]) { check on the right side of the array;}
     else{ check the left side of the array}
+
+#### Minstack
+    we are to design a stack with the basic functionalities of the stack. In addition to it
+    it must return the min element every time we hit getMin()
+##### Solution
+    We take 2 stacks into consideration, one stack would always store the min element such
+    that if there is any element less than the min element of the stack, in that case,
+    we would append the current min, else push the existing min, When we pop elements
+    from the stack, we also pop the minStack
