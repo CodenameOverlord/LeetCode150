@@ -29,6 +29,7 @@ public class Main {
         temp.next = p.start;
         return newStart;
     }
+
     int totalNodes(ListNode head){
         ListNode temp = head;
         if(temp == null)
