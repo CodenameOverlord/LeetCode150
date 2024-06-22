@@ -513,3 +513,36 @@
     that if there is any element less than the min element of the stack, in that case,
     we would append the current min, else push the existing min, When we pop elements
     from the stack, we also pop the minStack
+
+
+#### Gas Station
+    we are provided with gas [] which contains the gas available at each
+    station, and cost[] which contains the gas required for moving from
+    one station to other station.
+    constraint: there is either one unique solution or no solution.
+    if no solution, return -1
+    else return the unique soln
+
+
+
+##### Solution
+        Simply put, we are to check if
+        1. the total gas in the gas station >= total cost of gas
+        2. iterate over the element to calculate the diff of cost and 
+            current gas present, if the difference is less than zero, 
+            we are going to reset total to 0, and take current index
+            being consider as i+1
+##### Code 
+        long gasSum = getSumOfElements(gas);
+        long costSum = getSumOfElements(cost);
+        if(gasSum<costSum)
+            return -1;
+        int total = 0; int index = 0;
+        for(int i =0; i< gas.length; ++i){
+            total+=(gas[i]-cost[i]);
+            if(total<0){
+                total = 0;
+                index = i+1;
+            }
+        }
+        return index;
