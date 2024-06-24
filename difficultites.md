@@ -546,3 +546,36 @@
             }
         }
         return index;
+
+#### Min-Abs_difference in binary tree
+    we are to determine the min abs difference between two nodes in a binary tree
+
+##### Solution
+    The inorder traversal of a binary tree gives the value of the nodes in ascending
+    order
+
+##### Code
+    The min difference is always possible between two adjacent numbers when
+    they are sorted in ascending order
+    determine ans and prev global variable and update the prev 
+
+    class Solution {
+        int prev = Integer.MAX_VALUE;
+        int ans = Integer.MAX_VALUE;
+        public int getMinimumDifference(TreeNode root) {
+            inorder(root);
+            return ans;
+        }
+
+        public void inorder(TreeNode root){
+            if(root==null){
+            return;
+            }
+            inorder(root.left);
+            if(prev!=Integer.MAX_VALUE){
+                ans = Math.min(ans, root.val-prev);
+            }
+            prev = root.val;
+            inorder(root.right);
+        }
+    }
