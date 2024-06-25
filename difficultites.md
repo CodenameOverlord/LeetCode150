@@ -579,3 +579,22 @@
             inorder(root.right);
         }
     }
+#### ReverseBits
+    We are to give the reverse of the bits n
+    Example 1:
+
+    Input: n = 00000010100101000001111010011100
+    Output:    964176192 (00111001011110000010100101000000)
+    Explanation: The input binary string 00000010100101000001111010011100 represents the unsigned integer 43261596, so return 964176192 which its binary representation is 00111001011110000010100101000000.
+    Example 2:
+    
+    Input: n = 11111111111111111111111111111101
+    Output:   3221225471 (10111111111111111111111111111111)
+    Explanation: The input binary string 11111111111111111111111111111101 represents the unsigned integer 4294967293, so return 3221225471 which its binary representation is 10111111111111111111111111111111.
+    
+##### Solutions
+    Note that we are to reverse the bits, so we will start from 31 end to 0 if 
+    currentNum = (1<<i & num)>0 in that case we are appending 1<<(31-i)
+    Since negetive numbers are represented by 2's compliment:
+    we are checking whether the first bit is set or unset,
+    if the first bit is set, we are adding 1 to it
