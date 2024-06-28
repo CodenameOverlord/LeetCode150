@@ -598,3 +598,47 @@
     Since negetive numbers are represented by 2's compliment:
     we are checking whether the first bit is set or unset,
     if the first bit is set, we are adding 1 to it
+
+
+#### PartitionList
+    we are to partition list L in such a way that all nodes with value less than K are stored in front
+    of ListNode with values greater than K
+##### Solution
+    The idea is to have 2 superNodes = with value zero, ie, superNodeL denoting listNode with values
+    less than K and superNodeG with values >=k
+
+    superNodeL->1->2->3
+    superNodeG->4-7->7->5
+
+    keep a pointer tempL and tempG denoting the lastNode of L and G so that addition of new nodes
+    take o(1)
+    
+    once done, put tempL.next = superNodeG.next;
+    return superNodeL.next;
+
+##### Code
+
+    public ListNode partition(ListNode head, int x) {
+        ListNode superHeadG = new ListNode(0);
+        ListNode superHeadL = new ListNode(0);
+
+        ListNode tempG = superHeadG; ListNode tempL= superHeadL;
+        ListNode temp =head;
+        while(temp!=null){
+            if(temp.val <x){
+                tempL.next = temp;
+                tempL = temp;
+                temp = temp.next;
+                tempL.next = null;
+            }
+            else{
+                tempG.next = temp;
+                tempG = temp;
+                temp = temp.next;
+                tempG.next = null;
+            }
+        }
+        tempL.next = superHeadG.next;
+        return superHeadL.next;
+
+    }
