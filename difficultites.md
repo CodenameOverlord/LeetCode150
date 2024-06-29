@@ -642,3 +642,39 @@
         return superHeadL.next;
 
     }
+
+#### SingleNumber2
+    All but one number has been repeated 3 times, we are to evaluate which number is
+    single.
+##### Solution
+    The idea is for each bit 0-31 find all the numbers in the arrayList with setBit and
+    add them, if the number is not divisible by 3, add that to ans.
+    return ans;
+
+    One imp logic
+    while evaluating setBit be careful to do this
+        nums[i]&currBit !=0 (gives proper ans)
+    instead of this:
+        nums[i]&currBit >=1 (gives wrong ans)
+
+##### Code
+    public int singleNumber(int[] nums) {
+    int ans = 0;
+    int curr = 1;
+    int pos = 0;
+    
+    while(pos<32){
+        int numSet = 0;
+        for(int i =0; i<nums.length;++i){
+            if((nums[i]&curr)!=0){
+                numSet++;
+            }
+        }
+        if(numSet%3!=0){
+            ans+=curr;
+        }
+        curr = curr<<1; pos++;
+    }
+
+    return ans;
+    }
