@@ -678,3 +678,22 @@
 
     return ans;
     }
+
+
+#### Bitwise And of Number Range
+    We are given a range of number [left, right] both inclusive
+    we are to find the bitwise and of number range.
+
+
+###### Solution1
+    Take the first number as right, perform right& (right-1), our new right will be
+    equal to right& (right-1)
+    Continue doing this until left<right
+
+    public int rangeBitwiseAnd(int left, int right) {
+        while(right>left){
+            right=(right&(right-1));
+        }
+        return right;
+    }
+
