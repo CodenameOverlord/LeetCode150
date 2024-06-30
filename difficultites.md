@@ -697,3 +697,9 @@
         return right;
     }
 
+##### Solution2
+    Kind of non intuitive but we are going to note the number of shifts 
+    required to make left == right, once left == right, then we 
+    return left<<totalNumberOfShifts
+
+
