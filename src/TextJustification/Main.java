@@ -4,7 +4,6 @@ import org.w3c.dom.css.CSSFontFaceRule;
 
 import java.util.ArrayList;
 import java.util.List;
-
 public class Main {
     public static void main(String[] args) {
         List<String> sList = fullJustify(new String[]{"This", "is", "an", "example", "of", "text", "justification."}, 16);
