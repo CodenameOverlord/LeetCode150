@@ -732,7 +732,7 @@
     inorder traversal in a map
 
 #### Code
-##### parent method
+###### Parent method
     public TreeNode buildTree(int[] preorder, int[] inorder) {
         Map<Integer, Integer> inorderMap = new HashMap<>();
         for(int i =0; i< inorder.length;++i){
@@ -745,7 +745,7 @@
         return buildTree(preorder, preLeft, preRight, inorder, inLeft, inRight, inorderMap);
     }
 
-##### ChildMethod
+###### Child Method
     buildTree(int [] preOrder, int preLeft, int preRight,
                 int [] inOrder, int inLeft, int inRight,
                 Map<Integer, Integer> inorderPos){
