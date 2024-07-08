@@ -703,3 +703,69 @@
     return left<<totalNumberOfShifts
 
 
+#### Construct a binary tree from inorder and preorder traversal
+    Given an array of preorder and inorder traversal, we are to create
+    a binary tree with the above data
+#### Solution
+    a-> the first element in preorder traversal of a binary tree is always root
+
+    b-> we can find the position of current root in the inorder traversal
+    of the tree, in the nodes present on LHS we will have the left sub tree
+    
+    c-> in the nodes on the right hand side of the current position of root
+    we will have the rst
+
+    d-> we can calculate the nodes present in the leftSubtree using the
+    above data, let the same be called NodesInLst
+
+    e-> on preOrder traversal we first travel root, then left subtree
+    and then right subtree
+    therefore, 
+
+    Inorder =  |<---x no of nodes--->|Root|<----y no of nodes---->|
+    preorder = ||Root|<---x no of nodes---><----y no of nodes---->|
+    
+    f-> our stopping condition would be the time when leftNodes or rightNodes
+    becomes less than zero
+
+    g-> to optimise the time complexity, we will store the element position of 
+    inorder traversal in a map
+
+#### Code
+##### parent method
+    public TreeNode buildTree(int[] preorder, int[] inorder) {
+        Map<Integer, Integer> inorderMap = new HashMap<>();
+        for(int i =0; i< inorder.length;++i){
+            inorderMap.put(inorder[i], i);
+        }
+        int preLeft = 0;
+        int preRight = preorder.length-1;
+        int inLeft = 0;
+        int inRight = inorder.length-1;
+        return buildTree(preorder, preLeft, preRight, inorder, inLeft, inRight, inorderMap);
+    }
+
+##### ChildMethod
+    buildTree(int [] preOrder, int preLeft, int preRight,
+                int [] inOrder, int inLeft, int inRight,
+                Map<Integer, Integer> inorderPos){
+        
+        if(inLeft>inRight || preLeft>preRight){
+            return null;
+        }
+        TreeNode root  = new TreeNode(preOrder[preLeft]);
+        int inorderRootPos = inorderPos.get(root.val);
+        int noOfElementInLST = inorderRootPos-inorderLeft;
+        
+        root.left = buildTree(preOrder, preLeft+1, preLeft+noOfElementInLST
+                                inOrder, inLeft, inorderRootPos-1);
+        root.right = buildTree(preOrder, preLeft+noOfElementInLST+1, preRight,
+                                inOrder, inorderRootPos+1, inRight);
+        return root;
+    }
+    
+
+    
+
+
+    }
