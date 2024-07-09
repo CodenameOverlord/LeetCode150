@@ -786,3 +786,9 @@
     we are to find the number of set bits in a given integer
 ##### Solution
     keep on left shifting 1 and bitwise and the number to find the number of 1 bits
+
+#### SingleNumber1
+    we are given an array of numbers with every number except one number existing in pair
+    we are to find that number
+##### Solution
+    using xor since a^a = 0 && 0^a = a
