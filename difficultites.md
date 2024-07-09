@@ -763,3 +763,20 @@
                                 inOrder, inorderRootPos+1, inRight);
         return root;
     }
+
+
+#### Surrounded Region
+    we are given a char [] [] board, the board is filled with 'O' and 'X'
+    we are to return the conquered board such that any cells marked X is 
+    already conquered and the cells marked with 0 are yet to be conquered
+    
+    Our motive is to devise strategy such that the cells with 'O' that are 
+    on the edge of the board and their connected cells cannot be conquered
+
+##### Solution:
+    if we have x+y and we want x that means we don't want y
+    Perform dfs on the edge of the board, marking it T temporarily,
+    all elements connected to the edge will therefore by default be marked as
+    T,
+    Once done, replace the board such that area marked T is 'O' and everything else
+    is conquered that is 'X'
