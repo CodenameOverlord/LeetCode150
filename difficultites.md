@@ -780,3 +780,9 @@
     T,
     Once done, replace the board such that area marked T is 'O' and everything else
     is conquered that is 'X'
+
+
+#### Number of 1 bits
+    we are to find the number of set bits in a given integer
+##### Solution
+    keep on left shifting 1 and bitwise and the number to find the number of 1 bits
