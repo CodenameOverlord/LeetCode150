@@ -807,7 +807,7 @@
     postorderTraversal =        |<----xNodes---->|<---yNodes--->|root|
 
 
-    Here, x NODES denotes the number of nodes present in LST
+    Here, x nodes denotes the number of nodes present in LST
     and Y nodes denotes the number of nodes present in RST
     and root Node is the current rootNode
 
