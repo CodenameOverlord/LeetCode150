@@ -792,3 +792,56 @@
     we are to find that number
 ##### Solution
     using xor since a^a = 0 && 0^a = a
+
+
+#### Construct A binaryTree using inorder and postOrder traversal
+##### Solution 
+    Note the relative order of the inorder traversal and based on the current pos
+    of root, determine the number of nodes present in the left subtree and the 
+    number of nodes present in the right subtree.
+
+    Just like constructing a binary tree using preorder and inorder traversal, we
+    will have to construct a binary tree using postorder and inorder traversal
+    Hint:
+    inorderTraversal =          |<----xNodes---->|root|<---yNodes--->|
+    postorderTraversal =        |<----xNodes---->|<---yNodes--->|root|
+
+
+    Here, x NODES denotes the number of nodes present in LST
+    and Y nodes denotes the number of nodes present in RST
+    and root Node is the current rootNode
+
+##### Code
+     public TreeNode buildTree(int[] inorder, int[] postorder) {
+        Map<Integer, Integer> inorderMap = new HashMap<>();
+        for(int i =0; i< inorder.length;++i){
+            inorderMap.put(inorder[i],i);
+        }
+        int inorderLeft=0,postorderLeft =0, inorderRight=inorder.length-1, postorderRight=inorder.length-1;
+        return buildTree(inorder, inorderLeft, inorderRight,
+                postorder, postorderLeft, postorderRight,
+                inorderMap);
+    }
+
+    TreeNode buildTree(int [] inorder, int inorderLeft, int inorderRight,
+                       int postorder[] , int postorderLeft, int postorderRight,
+                       Map<Integer, Integer> inorderMap){
+
+        if(inorderLeft>inorderRight || postorderLeft>postorderRight)
+            return null;
+
+        TreeNode root = new TreeNode (postorder[postorderRight]);
+        int inorderRootPos = inorderMap.get(root.val);
+        int numNodesRight = inorderRight-inorderRootPos;
+        int newPostOrderLeftMostNode = postorderRight-numNodesRight;
+        root.right = buildTree(inorder, inorderRootPos+1, inorderRight,
+                postorder, newPostOrderLeftMostNode,postorderRight-1,
+                inorderMap
+        );
+
+        root.left = buildTree(inorder, inorderLeft, inorderRootPos-1,
+                postorder,postorderLeft, newPostOrderLeftMostNode-1,
+                inorderMap);
+
+        return root;
+    }
