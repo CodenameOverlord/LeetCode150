@@ -845,3 +845,9 @@
 
         return root;
     }
+
+#### Binary Tree Zig Zag Level Order Traversal
+##### Solution
+    Just as level order traversal, alternate each level 
+    so [normal][reverse][normal][reverse]
+    and so on...
