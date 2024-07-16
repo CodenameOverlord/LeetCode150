@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Main {
-    static class LRUCache {
+    static class LRUCache{
         class Node{
             int key;
             int val;
